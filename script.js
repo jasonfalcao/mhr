@@ -314,7 +314,7 @@ function displayRecords(q, w="any", highlight=""){
 	questName.innerHTML = qArr.rank.toUpperCase() + qArr.star + '⭐ ' + qArr.vanity;
 	
 	//set weapon image
-	weaponIcon.innerHTML = '<img src="img/weapons/' + w + '.png" />';
+	weaponIcon.innerHTML = (w=="any" || compareBox) ? '' : '<img src="img/weapons/' + w + '.png" />';
 
 	//set monster icons.
 	let newMonsterIcon = "";
@@ -326,12 +326,18 @@ function displayRecords(q, w="any", highlight=""){
 	monsterIcons.innerHTML = newMonsterIcon;
 
 	//display results
-	displayInTable(localResults, highlight);
+	if(w=="any" || compareBox){
+		displayInTable(localResults, highlight, true);
+	}
+	else{
+		displayInTable(localResults, highlight);
+	}
+	
 }
 
 
 //expects an array of times/datetime objects
-function displayInTable(tArr, highlight=""){
+function displayInTable(tArr, highlight="", weaponList=false){
 	let timeTable = document.getElementById("timeTable");
 
 	//empty out the previous table
@@ -340,7 +346,8 @@ function displayInTable(tArr, highlight=""){
 	if(!tArr.length > 0){return;}
 	
 	//there is a better way than innerHTML, but this is so much easier. Ain't it always that way?
-	let tableString = '<table id="timeAttack" class="xx" border="1"><tr><th>Rank</th><th>Time</th><th>Weapon</th><th>Date</th></tr>'
+	let weaponHead = weaponList ? "<th>Weapon</th>" : "";
+	let tableString = '<table id="timeAttack" class="xx" border="1"><tr><th>Rank</th><th>Time</th>' + weaponHead + '<th>Date</th></tr>'
 	
 	const parser = new DOMParser();
 	let rank = 1;
@@ -365,12 +372,14 @@ function displayInTable(tArr, highlight=""){
 		if(t.datetime == highlight){
 			highlightClass = ' class="highlight" '
 		}
+
+		let weaponImage = weaponList ? '<td' + highlightClass + '>' + '<img style="height:40px;" src="img/weapons/' + t.weapon + '.png" />' + '</td>' : '';
 		const newstring = (`
 		<tr>
 			<td` + highlightClass + `>` + rankDisplay + `</td>
-			<td` + highlightClass + `>` + msToTime(t.time) + `</td>
-			<td` + highlightClass + `>` + '<img style="height:40px;" src="img/weapons/' + t.weapon + '.png" />' + `</td>
-			<td` + highlightClass + `>` + str + `</td>
+			<td` + highlightClass + `>` + msToTime(t.time) + `</td>`
+			+ weaponImage + 
+			`<td` + highlightClass + `>` + str + `</td>
 		</tr>
 		`)
 		tableString += newstring;
