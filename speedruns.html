@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script> 
+</head>
+
+
+<body>
+
+
+<section id="timeAttack">
+	<div id="questInfo">
+		<h3 id="questName"></h3>
+	</div>
+	<div id="weaponIcon"></div>
+	<div id="monsterIcons"></div>
+	<div id="timeTable"></div>
+</section>
+
+<section id="questSelector">
+	<h1>DISPLAY TIME</h1>
+	<select id="quest" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)">
+		<script>
+			//new Quest(id, "name", "rank", star, "monsters", "type", keyQuestTF)
+			//new Quest(1, "Roly-poly Lanterns", "lr", 1, "", "gathering", true),
+			QuestList.forEach(key => document.write('<option value="', key.id, '">', key.name, '</option>' ))
+		</script>
+	</select>
+
+	<select id="weapon" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)">
+		<script>
+			WeaponList.forEach(key => document.write('<option value="', key.id, '">', key.vanity, '</option>' ))
+		</script>	
+		<option value="any">all weapons</option>
+	</select>
+</section>
+
+
+<section>
+	<h1>ADD RECORD:</h1>
+
+	<select id="inputQ">
+		<script>
+			QuestList.forEach(key => document.write('<option value="', key.id, '">', key.vanity, '</option>' ))
+		</script>
+	</select>
+	<select id="inputW">
+		<script>
+			WeaponList.forEach(key => document.write('<option value="', key.id, '">', key.vanity, '</option>' ))
+		</script>	
+	</select>
+	<div><input id="inputT" type="text" value="" maxlength="6"></div>
+	<div><button onclick="addRecord()">button</button></div>
+
+	<div><input type="checkbox" id="compareBox" value="any" /> Compare vs all weapons</div>
+</section>
+
+
+
+<section>
+	<h1>Reset your data</h1>
+	<button onclick="clearRecords()">RESET</button>
+</section>
+
+
+
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". 
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>-->
+  <!-- Load our React component. 
+  <script src="like_button.js"></script>-->
+</body>
+</html>

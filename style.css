@@ -1,0 +1,63 @@
+div{
+	margin: auto;
+}
+
+body{
+	background-color: #111111;
+	color: #ececec;
+	font-size: 22px;
+}
+
+body > section{
+	margin: 50px auto;	
+}
+
+#timeAttack{
+	display: flex;
+	flex-direction: column;
+	width: auto;
+}
+
+#timeTable{
+	margin-top:50px;
+}
+#timeTable th, #timeTable td{
+	padding: 5px;
+}
+#timeTable .highlight{
+	color: gold;
+}
+
+
+#weaponIcon img, #monsterIcons img{
+	height: 100px;
+	margin: auto;
+	display: inline-block;
+}
+#weaponIcon img{
+	height: 140px;
+}
+
+select{
+	padding:5px;
+	font-size: 1rem;
+}
+
+#inputT{
+	background-image: url("http://3.bp.blogspot.com/-4oAWWCcNNz4/Tjr3nKNyVUI/AAAAAAAAPLU/Pouua-pNsEY/s1600/sq.gif");    
+	width: 200px;
+	height: 28px;
+	background-size: 34px;
+	border: none;
+	font-family: monospace;
+	font-size: 22px;
+	padding-left: 4px;
+	letter-spacing: 19px;
+	direction: rtl;
+	margin: 20px 0;
+}
+
+button{
+	font-size: 1rem;
+	padding: 15px;	
+}
