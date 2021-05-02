@@ -396,6 +396,8 @@ function addRecord(){
 	let inputT = parseInt(document.querySelector('#inputT').value);
 	const datetime = Date.now();
 
+	if(!(inputT > 0)){return ;}
+
 	localData.push({
 					weapon : inputW,
 					quest : inputQ,
@@ -408,6 +410,8 @@ function addRecord(){
 	//update table with new records
 	document.getElementById('quest').value=inputQ;
 	displayRecords(inputQ, inputW, datetime);
+	//reset input to empty
+	document.querySelector('#inputT').value = ""
 }
 
 function saveRecords(){
