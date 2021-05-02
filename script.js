@@ -46,8 +46,8 @@ WeaponList.push(
 	new Weapon("hbg", dictionary.hbg),
 	new Weapon("bow", dictionary.bow)
 )
-console.log("WeaponList = ");
-console.log(WeaponList);
+//console.log("WeaponList = ");
+//console.log(WeaponList);
 
 
 
@@ -250,8 +250,8 @@ new Quest(10749, "Master Utsushi's Challenge Part 2", "hr", 8, "rajang,gossharag
 new Quest(10750, "Master Utsushi's Challenge Part 3", "hr", 8, "nargacuga,magnamalow", "hunting", false)
 /*** end update 2.0 ***/
 );
-console.log("QuestList = ")
-console.log(QuestList)
+//console.log("QuestList = ")
+//console.log(QuestList)
 /*console.log("search QuestList for Arzuros")
 let test = QuestList.filter(element => element.monsters.toLowerCase().includes("Arzuros".toLowerCase()))
 const found = test ? "found" : "nope"
