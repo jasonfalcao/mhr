@@ -16,7 +16,7 @@
 
 <section id="timeAttack">
 	<div id="questInfo">
-		<h3 id="questName"></h3>
+		<div id="questName"></div>
 	</div>
 	<div id="weaponIcon"></div>
 	<div id="monsterIcons"></div>
@@ -25,10 +25,8 @@
 
 <section id="questSelector">
 	<h1>DISPLAY TIME</h1>
-	<select id="quest" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)">
-		<script>
-			QuestList.forEach(key => document.write('<option value="', key.id, '">', key.name, '</option>' ))
-		</script>
+	<select id="quest" onclick="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)">
+
 	</select>
 
 	<select id="weapon" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)">
@@ -37,16 +35,30 @@
 		</script>	
 		<option value="any">all weapons</option>
 	</select>
-</section>
 
+
+	<div><input type="checkbox" id="compareMonster" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)" /> Display all quests with the same monsters in this quest (useful for multiple quests that have the same monster and you want to compare across quests). Works best with single monsters.</div>
+	<div><input type="checkbox" id="compareBox" value="any" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)" /> Compare vs all weapons</div>
+	<br /><br />
+	Search Options
+	<div><label>Search by Monster Name: <input type="text" id="questSearch" value="" /></label></div>
+	<div><label>Solo Monster: <input type="checkbox" id="soloMonster" /></label></div>
+	<div>Rank selection
+		<select id="rankSelect" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)">
+			<option value=""></option>
+			<option value="vr">Village</option>
+			<option value="lr">LR</option>
+			<option value="hr">HR</option>
+		</select>
+	</div>
+
+</section>
 
 <section>
 	<h1>ADD RECORD:</h1>
-
+	<div><label>Search by Monster Name: <input type="text" id="addRecordSearch" value="" /></label></div>
 	<select id="inputQ">
-		<script>
-			QuestList.forEach(key => document.write('<option value="', key.id, '">', key.vanity, '</option>' ))
-		</script>
+
 	</select>
 	<select id="inputW">
 		<script>
@@ -54,9 +66,7 @@
 		</script>	
 	</select>
 	<div><input id="inputT" type="text" value="" maxlength="6"></div>
-	<div><button onclick="addRecord()">button</button></div>
-
-	<div><input type="checkbox" id="compareBox" value="any" /> Compare vs all weapons</div>
+	<div id="addButtonDiv"><button id="addButtonSlay" onclick="addRecord()">Slay</button><button id="addButtonCapture" onclick="addRecord('capture')">Capture</button></div>
 </section>
 
 
@@ -66,7 +76,11 @@
 	<button onclick="clearRecords()">RESET</button>
 </section>
 
+<script>
+	//10713 and 10723
 
+	//displayRecords(inputQ, inputW, datetime);
+</script>
 
 </body>
 </html>

@@ -44,7 +44,7 @@ select{
 }
 
 #inputT{
-	background-image: url("http://3.bp.blogspot.com/-4oAWWCcNNz4/Tjr3nKNyVUI/AAAAAAAAPLU/Pouua-pNsEY/s1600/sq.gif");    
+	background-image: url("img/sq.gif");
 	width: 200px;
 	height: 28px;
 	background-size: 34px;
@@ -60,4 +60,8 @@ select{
 button{
 	font-size: 1rem;
 	padding: 15px;	
+}
+
+#questName{
+	text-align: center;
 }

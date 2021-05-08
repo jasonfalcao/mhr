@@ -69,101 +69,101 @@ class Quest{
 let QuestList = [];
 QuestList.push(
 	//new Quest(id, "name", "rank", star, "monsters", "type", keyQuestTF)
-new Quest(102, "Roly-poly Lanterns", "lr", 1, "", "gathering", true),
-new Quest(103, "Fungal Frustrations", "lr", 1, "", "gathering", true),
-new Quest(104, "Unpious Peons", "lr", 1, "", "slaying", true),
-new Quest(105, "Help with Maintenance", "lr", 1, "", "slaying", false),
-new Quest(203, "Grizzly Glutton", "lr", 2, "arzuros", "hunting", true),
-new Quest(204, "Plump and Juicy", "lr", 2, "", "gathering", true),
-new Quest(205, "A Frosty Paradise", "lr", 2, "", "slaying", true),
-new Quest(206, "Out Cold", "lr", 2, "greatbaggi", "hunting", true),
-new Quest(207, "Rabid Rabbit", "lr", 2, "lagombi", "hunting", true),
-new Quest(202, "Great Izuchi, Great Pain", "lr", 2, "greatizuchi", "hunting", false),
-new Quest(208, "Case of the Creepy Crawlies", "lr", 2, "", "slaying", false),
-new Quest(209, "Hmmm, Not So Tasty...", "lr", 2, "", "gathering", false),
-new Quest(304, "The Rampage Approaches", "lr", 3, "", "rampage", true),
-new Quest(305, "Can't Stomach the Thought", "lr", 3, "tetranadon", "hunting", true),
-new Quest(306, "Walking on Eggshells", "lr", 3, "kuluyaku", "hunting", true),
-new Quest(307, "Fightin' Dirty", "lr", 3, "barroth", "hunting", true),
-new Quest(308, "Obnoxious Lord, Noxious Monster", "lr", 3, "greatwroggi", "hunting", true),
-new Quest(309, "Spongy Oasis", "lr", 3, "", "hunting", true),
-new Quest(303, "Feathered Frenzy", "lr", 3, "aknosom", "hunting", false),
-new Quest(310, "Supply Run", "lr", 3, "", "gathering", false),
-new Quest(311, "Faceless Foe", "lr", 3, "khezu", "hunting", false),
-new Quest(312, "The Cactus Diet", "lr", 3, "", "gathering", false),
-new Quest(313, "A Sandy Cabal", "lr", 3, "", "slaying", false),
-new Quest(314, "Breath of the Past", "lr", 3, "", "gathering", false),
-new Quest(315, "Ladies of the Lake", "lr", 3, "", "slaying", false),
-new Quest(403, "Special License Test 1", "lr", 4, "aknosom,rathian", "hunting", false),
-new Quest(404, "Infernal Lacrimosa", "lr", 4, "somnacanth", "hunting", true),
-new Quest(405, "Raging White-out", "lr", 4, "barioth", "hunting", true),
-new Quest(406, "The Queen's Procession", "lr", 4, "rathian", "hunting", true),
-new Quest(407, "Streaking Shadow", "lr", 4, "tobikadachi", "hunting", true),
-new Quest(408, "A Song of Red and Fire", "lr", 4, "volvidon", "hunting", true),
-new Quest(409, "Off Your Rocker", "lr", 4, "basarios", "hunting", true),
-new Quest(402, "Monkey Wrench in your Plans", "lr", 4, "bishaten", "hunting", false),
-new Quest(410, "Getting Back the Groceries", "lr", 4, "", "gathering", false),
-new Quest(411, "A Poisonous Project", "lr", 4, "pukeipukei", "hunting", false),
-new Quest(412, "Deliver the Liver", "lr", 4, "", "gathering", false),
-new Quest(413, "So Hot, It Melts Iron", "lr", 4, "", "gathering", false),
-new Quest(414, "THE BEST Quest", "lr", 4, "", "slaying", false),
-new Quest(415, "Third Wheel", "lr", 4, "arzuros,tetranadon", "arena", false),
-new Quest(502, "Special License Test 2", "lr", 5, "magnamalo,bishaten", "hunting", false),
-new Quest(503, "Wind Speed Wyvern", "lr", 5, "nargacuga", "hunting", true),
-new Quest(504, "Electrifying Epiphany", "lr", 5, "zinogre", "hunting", true),
-new Quest(505, "Nocturnal Tracker", "lr", 5, "anjanath", "hunting", true),
-new Quest(506, "Waltzing by Moonlight", "lr", 5, "mizutsune", "hunting", true),
-new Quest(507, "Rathalos Alert!", "lr", 5, "rathalos", "hunting", true),
-new Quest(501, "Comeuppance", "lr", 5, "magnamalo", "hunting", false),
-new Quest(508, "The Secret Ingredient", "lr", 5, "somnacanth", "capture", false),
-new Quest(509, "BZZZZZ or ZZZZzzzz", "lr", 5, "khezu,somnacanth", "hunting", false),
-new Quest(510, "Nosey Nuisances", "lr", 5, "kuluyaku,anjanath", "hunting", false),
-new Quest(511, "The Hottest Around", "lr", 5, "tetranadon,volvidon", "hunting", false),
-new Quest(602, "Hermit of the Swamp", "lr", 6, "almudron", "hunting", false),
-new Quest(603, "Advanced: The Veterans Gala", "lr", 6, "rajang,magnamalo", "arena", false),
-new Quest(604, "Abominable Snow-beast", "lr", 6, "gossharag", "hunting", false),
-new Quest(605, "Thundering Voice", "lr", 6, "tigrex", "hunting", false),
-new Quest(606, "Twisted Desire", "lr", 6, "diablos", "hunting", false),
-new Quest(607, "A Test of Courage", "lr", 6, "magnamalo,zinogre", "hunting", false),
-new Quest(608, "Like a Flash of Lightning", "lr", 6, "tobikadachi,mizutsune", "hunting", false),
-new Quest(609, "King of the Sky, Bane of the Land", "lr", 6, "rathalos,tigrex", "hunting", false),
-new Quest(10104, "Shady Monster", "hr", 1, "aknosom", "hunting", false),
-new Quest(10105, "Tired and Feathered", "hr", 1, "kuluyaku", "hunting", false),
-new Quest(10106, "Jumped in the Frost Islands", "hr", 1, "greatizuchi", "hunting", false),
-new Quest(10107, "No Cure for the Common Baggi", "hr", 1, "greatbaggi", "hunting", false),
-new Quest(10108, "A Snowball's Chance...", "hr", 1, "lagombi", "hunting", false),
-new Quest(10109, "Wroggi Place, Wroggi Time", "hr", 1, "greatwroggi", "hunting", false),
-new Quest(10110, "A Grizzly Encounter", "hr", 1, "arzuros", "hunting", false),
-new Quest(10111, "Off the Beaten Path", "hr", 1, "", "slaying", false),
-new Quest(10112, "Hot Topic Hooligans", "hr", 1, "", "slaying", false),
-new Quest(10204, "I Want Off This Ride", "hr", 2, "bishaten", "hunting", false),
-new Quest(10205, "Way of the Pukei", "hr", 2, "pukeipukei", "hunting", false),
-new Quest(10206, "The Flooding Flooded Forest", "hr", 2, "royalludroth", "hunting", false),
-new Quest(10207, "So Muddy Hardheaded!", "hr", 2, "barroth", "hunting", false),
-new Quest(10208, "A Pale Shadow", "hr", 2, "khezu", "hunting", false),
-new Quest(10209, "Reinventing the Wheel", "hr", 2, "volvidon", "hunting", false),
-new Quest(10210, "Blasted Basarios!", "hr", 2, "basarios", "hunting", false),
-new Quest(10211, "The Path to Royalty", "hr", 2, "rathian", "hunting", false),
-new Quest(10203, "Dead Ringer", "hr", 2, "tetranadon", "hunting", false),
-new Quest(10212, "Dawn of the Kestodon", "hr", 2, "", "slaying", false),
-new Quest(10213, "Hide, Hide, Hide!", "hr", 2, "", "slaying", false),
-new Quest(10214, "Bouncing Brawlers", "hr", 2, "lagombi,tetranadon", "slaying", false),
-new Quest(10215, "Fried and Baptized", "hr", 2, "royalludroth,rathian", "slaying", false),
-new Quest(10303, "Beckoning Slumber", "hr", 3, "somnacanth", "hunting", false),
-new Quest(10304, "The Blizzard Blender", "hr", 3, "gossharag", "hunting", false),
-new Quest(10305, "Zigzagging Zapper", "hr", 3, "tobukadachi", "hunting", false),
-new Quest(10306, "Down 'n' Dirty", "hr", 3, "almudron", "hunting", false),
-new Quest(10307, "Bully of the Caverns", "hr", 3, "anjanath", "hunting", false),
-new Quest(10308, "Twilit Twin Stars", "hr", 3, "nargacuga", "hunting", false),
-new Quest(10309, "My Muse the Mizutsune", "hr", 3, "mizutsune", "hunting", false),
-new Quest(10310, "Champion of the Caverns", "hr", 3, "rathalos", "hunting", false),
-new Quest(10311, "Wavering Moon and Thunder", "hr", 3, "zinogre", "hunting", false),
-new Quest(10312, "White Knight vs. Hunter", "hr", 3, "barioth", "hunting", false),
-new Quest(10313, "A Friend in Need", "hr", 3, "tigrex", "hunting", false),
-new Quest(10314, "A Few Bumps Along the Way", "hr", 3, "diablos", "hunting", false),
-new Quest(10302, "Hellfire", "hr", 3, "magnamalo", "hunting", false),
-new Quest(10315, "Tail to Tail", "hr", 3, "bishaten,almudron", "hunting", false),
-new Quest(10316, "Beastly Chaos", "hr", 3, "tigrex,gossharag", "hunting", false),
+new Quest(102, "Roly-poly Lanterns", "vr", 1, "", "gathering", true),
+new Quest(103, "Fungal Frustrations", "vr", 1, "", "gathering", true),
+new Quest(104, "Unpious Peons", "vr", 1, "", "slaying", true),
+new Quest(105, "Help with Maintenance", "vr", 1, "", "slaying", false),
+new Quest(203, "Grizzly Glutton", "vr", 2, "arzuros", "hunting", true),
+new Quest(204, "Plump and Juicy", "vr", 2, "", "gathering", true),
+new Quest(205, "A Frosty Paradise", "vr", 2, "", "slaying", true),
+new Quest(206, "Out Cold", "vr", 2, "greatbaggi", "hunting", true),
+new Quest(207, "Rabid Rabbit", "vr", 2, "lagombi", "hunting", true),
+new Quest(202, "Great Izuchi, Great Pain", "vr", 2, "greatizuchi", "hunting", false),
+new Quest(208, "Case of the Creepy Crawlies", "vr", 2, "", "slaying", false),
+new Quest(209, "Hmmm, Not So Tasty...", "vr", 2, "", "gathering", false),
+new Quest(304, "The Rampage Approaches", "vr", 3, "", "rampage", true),
+new Quest(305, "Can't Stomach the Thought", "vr", 3, "tetranadon", "hunting", true),
+new Quest(306, "Walking on Eggshells", "vr", 3, "kuluyaku", "hunting", true),
+new Quest(307, "Fightin' Dirty", "vr", 3, "barroth", "hunting", true),
+new Quest(308, "Obnoxious Lord, Noxious Monster", "vr", 3, "greatwroggi", "hunting", true),
+new Quest(309, "Spongy Oasis", "vr", 3, "", "hunting", true),
+new Quest(303, "Feathered Frenzy", "vr", 3, "aknosom", "hunting", false),
+new Quest(310, "Supply Run", "vr", 3, "", "gathering", false),
+new Quest(311, "Faceless Foe", "vr", 3, "khezu", "hunting", false),
+new Quest(312, "The Cactus Diet", "vr", 3, "", "gathering", false),
+new Quest(313, "A Sandy Cabal", "vr", 3, "", "slaying", false),
+new Quest(314, "Breath of the Past", "vr", 3, "", "gathering", false),
+new Quest(315, "Ladies of the Lake", "vr", 3, "", "slaying", false),
+new Quest(403, "Special License Test 1", "vr", 4, "aknosom,rathian", "hunting", false),
+new Quest(404, "Infernal Lacrimosa", "vr", 4, "somnacanth", "hunting", true),
+new Quest(405, "Raging White-out", "vr", 4, "barioth", "hunting", true),
+new Quest(406, "The Queen's Procession", "vr", 4, "rathian", "hunting", true),
+new Quest(407, "Streaking Shadow", "vr", 4, "tobikadachi", "hunting", true),
+new Quest(408, "A Song of Red and Fire", "vr", 4, "volvidon", "hunting", true),
+new Quest(409, "Off Your Rocker", "vr", 4, "basarios", "hunting", true),
+new Quest(402, "Monkey Wrench in your Plans", "vr", 4, "bishaten", "hunting", false),
+new Quest(410, "Getting Back the Groceries", "vr", 4, "", "gathering", false),
+new Quest(411, "A Poisonous Project", "vr", 4, "pukeipukei", "hunting", false),
+new Quest(412, "Deliver the Liver", "vr", 4, "", "gathering", false),
+new Quest(413, "So Hot, It Melts Iron", "vr", 4, "", "gathering", false),
+new Quest(414, "THE BEST Quest", "vr", 4, "", "slaying", false),
+new Quest(415, "Third Wheel", "vr", 4, "arzuros,tetranadon", "arena", false),
+new Quest(502, "Special License Test 2", "vr", 5, "magnamalo,bishaten", "hunting", false),
+new Quest(503, "Wind Speed Wyvern", "vr", 5, "nargacuga", "hunting", true),
+new Quest(504, "Electrifying Epiphany", "vr", 5, "zinogre", "hunting", true),
+new Quest(505, "Nocturnal Tracker", "vr", 5, "anjanath", "hunting", true),
+new Quest(506, "Waltzing by Moonlight", "vr", 5, "mizutsune", "hunting", true),
+new Quest(507, "Rathalos Alert!", "vr", 5, "rathalos", "hunting", true),
+new Quest(501, "Comeuppance", "vr", 5, "magnamalo", "hunting", false),
+new Quest(508, "The Secret Ingredient", "vr", 5, "somnacanth", "capture", false),
+new Quest(509, "BZZZZZ or ZZZZzzzz", "vr", 5, "khezu,somnacanth", "hunting", false),
+new Quest(510, "Nosey Nuisances", "vr", 5, "kuluyaku,anjanath", "hunting", false),
+new Quest(511, "The Hottest Around", "vr", 5, "tetranadon,volvidon", "hunting", false),
+new Quest(602, "Hermit of the Swamp", "vr", 6, "almudron", "hunting", false),
+new Quest(603, "Advanced: The Veterans Gala", "vr", 6, "rajang,magnamalo", "arena", false),
+new Quest(604, "Abominable Snow-beast", "vr", 6, "gossharag", "hunting", false),
+new Quest(605, "Thundering Voice", "vr", 6, "tigrex", "hunting", false),
+new Quest(606, "Twisted Desire", "vr", 6, "diablos", "hunting", false),
+new Quest(607, "A Test of Courage", "vr", 6, "magnamalo,zinogre", "hunting", false),
+new Quest(608, "Like a Flash of Lightning", "vr", 6, "tobikadachi,mizutsune", "hunting", false),
+new Quest(609, "King of the Sky, Bane of the Land", "vr", 6, "rathalos,tigrex", "hunting", false),
+new Quest(10104, "Shady Monster", "lr", 1, "aknosom", "hunting", false),
+new Quest(10105, "Tired and Feathered", "lr", 1, "kuluyaku", "hunting", false),
+new Quest(10106, "Jumped in the Frost Islands", "lr", 1, "greatizuchi", "hunting", false),
+new Quest(10107, "No Cure for the Common Baggi", "lr", 1, "greatbaggi", "hunting", false),
+new Quest(10108, "A Snowball's Chance...", "lr", 1, "lagombi", "hunting", false),
+new Quest(10109, "Wroggi Place, Wroggi Time", "lr", 1, "greatwroggi", "hunting", false),
+new Quest(10110, "A Grizzly Encounter", "lr", 1, "arzuros", "hunting", false),
+new Quest(10111, "Off the Beaten Path", "lr", 1, "", "slaying", false),
+new Quest(10112, "Hot Topic Hooligans", "lr", 1, "", "slaying", false),
+new Quest(10204, "I Want Off This Ride", "lr", 2, "bishaten", "hunting", false),
+new Quest(10205, "Way of the Pukei", "lr", 2, "pukeipukei", "hunting", false),
+new Quest(10206, "The Flooding Flooded Forest", "lr", 2, "royalludroth", "hunting", false),
+new Quest(10207, "So Muddy Hardheaded!", "lr", 2, "barroth", "hunting", false),
+new Quest(10208, "A Pale Shadow", "lr", 2, "khezu", "hunting", false),
+new Quest(10209, "Reinventing the Wheel", "lr", 2, "volvidon", "hunting", false),
+new Quest(10210, "Blasted Basarios!", "lr", 2, "basarios", "hunting", false),
+new Quest(10211, "The Path to Royalty", "lr", 2, "rathian", "hunting", false),
+new Quest(10203, "Dead Ringer", "lr", 2, "tetranadon", "hunting", false),
+new Quest(10212, "Dawn of the Kestodon", "lr", 2, "", "slaying", false),
+new Quest(10213, "Hide, Hide, Hide!", "lr", 2, "", "slaying", false),
+new Quest(10214, "Bouncing Brawlers", "lr", 2, "lagombi,tetranadon", "slaying", false),
+new Quest(10215, "Fried and Baptized", "lr", 2, "royalludroth,rathian", "slaying", false),
+new Quest(10303, "Beckoning Slumber", "lr", 3, "somnacanth", "hunting", false),
+new Quest(10304, "The Blizzard Blender", "lr", 3, "gossharag", "hunting", false),
+new Quest(10305, "Zigzagging Zapper", "lr", 3, "tobukadachi", "hunting", false),
+new Quest(10306, "Down 'n' Dirty", "lr", 3, "almudron", "hunting", false),
+new Quest(10307, "Bully of the Caverns", "lr", 3, "anjanath", "hunting", false),
+new Quest(10308, "Twilit Twin Stars", "lr", 3, "nargacuga", "hunting", false),
+new Quest(10309, "My Muse the Mizutsune", "lr", 3, "mizutsune", "hunting", false),
+new Quest(10310, "Champion of the Caverns", "lr", 3, "rathalos", "hunting", false),
+new Quest(10311, "Wavering Moon and Thunder", "lr", 3, "zinogre", "hunting", false),
+new Quest(10312, "White Knight vs. Hunter", "lr", 3, "barioth", "hunting", false),
+new Quest(10313, "A Friend in Need", "lr", 3, "tigrex", "hunting", false),
+new Quest(10314, "A Few Bumps Along the Way", "lr", 3, "diablos", "hunting", false),
+new Quest(10302, "Hellfire", "lr", 3, "magnamalo", "hunting", false),
+new Quest(10315, "Tail to Tail", "lr", 3, "bishaten,almudron", "hunting", false),
+new Quest(10316, "Beastly Chaos", "lr", 3, "tigrex,gossharag", "hunting", false),
 new Quest(10317, "Disastrously Beautiful", "hr", 3, "barroth,magnamalo,tobikadachi", "arena", false),
 new Quest(10403, "The Blue Apex", "hr", 4, "apexarzuros", "hunting", false),
 new Quest(10404, "The Swirling Gale", "hr", 4, "greatizuchi", "hunting", false),
@@ -237,11 +237,11 @@ new Quest(10703, "Ancient Illusion", "hr", 8, "chameleos", "hunting", false),
 new Quest(10704, "The Steely Storm", "hr", 8, "kushaladaora", "hunting", false),
 new Quest(10705, "The Emperor of Flame", "hr", 8, "teostra", "hunting", false),
 new Quest(10729, "Death From Above", "hr", 8, "bazelgeuse", "hunting", false),
-new Quest(10730, "Return of the Bazelgeuse", "hr", 8, "bazelgeuse", "hunting", false),
-new Quest(10731, "Return of the Bazelgeuse", "hr", 8, "bazelgeuse", "hunting", false),
-new Quest(10732, "Return of the Bazelgeuse", "hr", 8, "bazelgeuse", "hunting", false),
-new Quest(10733, "Return of the Bazelgeuse", "hr", 8, "bazelgeuse", "hunting", false),
-new Quest(10734, "Return of the Bazelgeuse", "hr", 8, "bazelgeuse", "hunting", false),
+new Quest(10730, "Return of the Bazelgeuse (Ruins)", "hr", 8, "bazelgeuse", "hunting", false),
+new Quest(10731, "Return of the Bazelgeuse (Frost Islands)", "hr", 8, "bazelgeuse", "hunting", false),
+new Quest(10732, "Return of the Bazelgeuse (Sandy Plains)", "hr", 8, "bazelgeuse", "hunting", false),
+new Quest(10733, "Return of the Bazelgeuse (Flooded Forest)", "hr", 8, "bazelgeuse", "hunting", false),
+new Quest(10734, "Return of the Bazelgeuse (Lava Caverns)", "hr", 8, "bazelgeuse", "hunting", false),
 new Quest(10735, "The Avaricious Apex Arzuros", "hr", 8, "apexarzuros", "hunting", false),
 new Quest(10736, "The Graceful Apex Rathian", "hr", 8, "apexrathian", "hunting", false),
 new Quest(10737, "The Harlequin Apex Mizutsune", "hr", 8, "apexmizutsune", "hunting", false),
@@ -285,33 +285,62 @@ function displayRecords(q, w="any", highlight=""){
 	const questName = document.getElementById("questName");
 	const monsterIcons = document.getElementById("monsterIcons");
 	const compareBox = document.getElementById("compareBox").checked;
+	const compareMonster = document.getElementById("compareMonster").checked;
+	//get quest info.
+	const qArr = QuestList.find( record => record.id == q)
 	
 	//search
 	let localResults = "";
-	if(w=="any" || compareBox){
+	if(compareMonster){
+
+		// TODO vr vs lr vs hr - right now this only checks records that match the current quest rank. Does it need to change?
+		// TODO match all monsters or only look at the first monster in a list?
+		//let mSearch = qArr.monsters.split(",")[0];
+		let mSearch = qArr.monsters; 
+		/* group by monster */
+
+		//let searchQuest = QuestList.filter(quest => quest.monsters.toLowerCase().includes(mSearch.toLowerCase()));
+		let searchQuest = QuestList.filter(quest => quest.monsters.toLowerCase() == mSearch.toLowerCase() && quest.rank == qArr.rank);
+		const found = searchQuest ? "found" : "nope";
+
+		//there is a list of quests with this monster. filter localData for records where record.quest is in searchQuest.id
+		let tArr = [];
+		let questString = ""
+		searchQuest.forEach( function(q){
+			let findRecord = "";
+			if(w=="any" || compareBox){
+				findRecord = localData.filter(record => record.quest == q.id)
+			}
+			else{
+				findRecord = localData.filter(record => record.quest == q.id && record.weapon == w)
+			}			
+
+			findRecord.forEach( function(record){
+				tArr.push(record)				
+			} )
+			//findRecord ? tArr.push(findRecord.pop()) : "";
+			questString += findRecord ? "<h3>" + q.rank.toUpperCase() + q.star + "⭐ " + q.vanity + "</h3>" : "";
+		})
+
+		localResults = tArr;
+		questName.innerHTML = questString;
+		//localResults = localData.filter( record => record.quest == q );
+		//localResults = localData
+	}
+	else if(w=="any" || compareBox){
 		localResults = localData.filter( record => record.quest == q );
 	}
 	else{
 		localResults = localData.filter( record => record.quest == q && record.weapon == w );
 	}
 
-		
-	if(!localResults.hasOwnProperty(0)){
-		questName.innerHTML = "Better get huntin'!";
-		weaponIcon.innerHTML = "";
-		monsterIcons.innerHTML = "";
-		displayInTable(0)
-		return;
-	}
-
-	//sort by time
-	//localResults.sort((a, b) => a.time-b.time);
-
-	//get quest info.
-	const qArr = QuestList.find( record => record.id == q)
-
 	//set quest name
-	questName.innerHTML = qArr.rank.toUpperCase() + qArr.star + '⭐ ' + qArr.vanity;
+	if(compareMonster){
+		
+	}
+	else{
+		questName.innerHTML = "<h3>" + qArr.rank.toUpperCase() + qArr.star + '⭐ ' + qArr.vanity + "</h3>";
+	}
 	
 	//set weapon image
 	weaponIcon.innerHTML = (w=="any" || compareBox) ? '' : '<img src="img/weapons/' + w + '.png" />';
@@ -326,7 +355,10 @@ function displayRecords(q, w="any", highlight=""){
 	monsterIcons.innerHTML = newMonsterIcon;
 
 	//display results
-	if(w=="any" || compareBox){
+	if(!localResults.hasOwnProperty(0)){
+		displayInTable(0)
+	}
+	else if(w=="any" || compareBox){
 		displayInTable(localResults, highlight, true);
 	}
 	else{
@@ -343,17 +375,19 @@ function displayInTable(tArr, highlight="", weaponList=false){
 	//empty out the previous table
 	while(timeTable.firstChild){timeTable.removeChild(timeTable.firstChild)}
 
-	if(!tArr.length > 0){return;}
+	if(!tArr.length > 0){
+		timeTable.innerHTML = "<h3>Better get huntin'!</h3>";
+		return;
+	}
 	
 	//there is a better way than innerHTML, but this is so much easier. Ain't it always that way?
-	let weaponHead = weaponList ? "<th>Weapon</th>" : "";
-	let tableString = '<table id="timeAttack" class="xx" border="1"><tr><th>Rank</th><th>Time</th>' + weaponHead + '<th>Date</th></tr>'
+	let weaponHead = weaponList ? "<th></th>" : "";
+	let tableString = '<table id="timeAttack" class="xx" border="1"><tr><th>Rank</th><th>Time</th>' + weaponHead + '<th></th><th>Date</th></tr>'
 	
 	const parser = new DOMParser();
 	let rank = 1;
 	let rankDisplay = "";
 	tArr.forEach(t => {
-		
 		switch(rank){
 			case 1:  rankDisplay = "S";break;
 			case 2:  rankDisplay = "A";break;
@@ -373,13 +407,15 @@ function displayInTable(tArr, highlight="", weaponList=false){
 			highlightClass = ' class="highlight" '
 		}
 
-		let weaponImage = weaponList ? '<td' + highlightClass + '>' + '<img style="height:40px;" src="img/weapons/' + t.weapon + '.png" />' + '</td>' : '';
+		let weaponImage = weaponList ? '<td' + highlightClass + '>' + '<img style="height:42px;" src="img/weapons/' + t.weapon + '.png" />' + '</td>' : '';
+		let methodString = t.method ? `<img style="height:25px;margin:5px;" src="img/icons/${t.method}.png" />` : `<img style="height:25px;margin:5px;" src="img/icons/slay.png" />`;
 		const newstring = (`
 		<tr>
-			<td` + highlightClass + `>` + rankDisplay + `</td>
-			<td` + highlightClass + `>` + msToTime(t.time) + `</td>`
-			+ weaponImage + 
-			`<td` + highlightClass + `>` + str + `</td>
+			<td ${highlightClass}>${rankDisplay}</td>
+			<td ${highlightClass}>${msToTime(t.time)}</td>
+			${weaponImage}
+			<td ${highlightClass}>${methodString}</td>
+			<td ${highlightClass}>${str}</td>
 		</tr>
 		`)
 		tableString += newstring;
@@ -390,11 +426,12 @@ function displayInTable(tArr, highlight="", weaponList=false){
 }
 
 
-function addRecord(){
+function addRecord(method = ""){
 	let inputW = document.querySelector('#inputW').value;
 	let inputQ = document.querySelector('#inputQ').value;
 	let inputT = parseInt(document.querySelector('#inputT').value);
 	const datetime = Date.now();
+	if(method == ""){method = "slay"}
 
 	if(!(inputT > 0)){return ;}
 
@@ -402,16 +439,20 @@ function addRecord(){
 					weapon : inputW,
 					quest : inputQ,
 					time : timeToMs(inputT),
-					datetime : datetime
+					datetime : datetime,
+					method : method
 				});
 	sortRecords();
 	saveRecords();
 
-	//update table with new records
+	//set display list to the newly added quest
 	document.getElementById('quest').value=inputQ;
+	//update table with new records
 	displayRecords(inputQ, inputW, datetime);
 	//reset input to empty
 	document.querySelector('#inputT').value = ""
+	//scroll to top
+	window.scrollTo(0, 0);
 }
 
 function saveRecords(){
@@ -467,3 +508,66 @@ function timeToMs(t){
 	const returning = (m*60*1000) + (s*1000) + (ms*10);
 	return returning;
 }
+
+function questSearch(targetSelect, search=""){
+	let buildString = "";
+	let qArr = QuestList;
+
+	//get options
+	const rank = document.getElementById("rankSelect").value
+	const solo = document.getElementById("soloMonster").checked
+
+	//search by monster and applicable options
+	if(solo == true && rank != "" && search != ""){
+		//let searchQuest = QuestList.filter(quest => quest.monsters.toLowerCase() == mSearch.toLowerCase() && quest.rank == qArr.rank);
+		console.log('condition 1')
+		qArr = QuestList.filter(quest => !quest.monsters.includes(",") && quest.monsters.toLowerCase().includes(search.toLowerCase()) && quest.rank == rank)
+	}
+	else if(solo == true && search != ""){
+		console.log('condition 2')
+		qArr = QuestList.filter(quest => !quest.monsters.includes(",") && quest.monsters.toLowerCase().includes(search.toLowerCase()))
+	}
+	else if(solo == true && rank != ""){
+		console.log('condition 3')
+		qArr = QuestList.filter(quest => !quest.monsters.includes(",") && quest.rank == rank)
+	}
+	else if(rank != "" && search != ""){
+		console.log('condition 4')
+		qArr = QuestList.filter(quest => quest.monsters.toLowerCase().includes(search.toLowerCase()) && quest.rank == rank)
+	}
+	else if(search != ""){
+		console.log('condition 5')
+		qArr = QuestList.filter(quest => quest.monsters.toLowerCase().includes(search.toLowerCase()))
+	}
+	else{
+		console.log('condition 6')
+	}
+
+	//build the option list
+	qArr.forEach(key => buildString += `<option value="${key.id}">${key.rank.toUpperCase()}${key.star}⭐ ${key.name}</option>`)
+	document.getElementById(targetSelect).innerHTML = buildString;
+}
+
+
+
+/***** page load, add event listeners *****/
+document.addEventListener("DOMContentLoaded", function() {
+
+	const questSearchEle = document.getElementById("questSearch")
+	const addRecordSearch = document.getElementById("addRecordSearch")
+
+	//add search for display time questlist and initialize
+	document.getElementById("questSearch").addEventListener("input", function(){questSearch("quest", this.value)});
+	document.getElementById("soloMonster").addEventListener("input", function(){questSearch("quest", questSearchEle.value)});
+	document.getElementById("rankSelect").addEventListener("input", function(){questSearch("quest", questSearchEle.value)});
+	questSearch("quest", questSearchEle.value);
+
+	//add search for add record questlist and init
+	document.getElementById("addRecordSearch").addEventListener("input", function(){questSearch("inputQ", this.value)});
+	document.getElementById("soloMonster").addEventListener("input", function(){questSearch("inputQ", addRecordSearch.value)});
+	document.getElementById("rankSelect").addEventListener("input", function(){questSearch("inputQ", addRecordSearch.value)});
+	questSearch("inputQ", addRecordSearch.value);
+
+	
+
+});
