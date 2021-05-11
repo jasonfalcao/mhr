@@ -288,6 +288,10 @@ function displayRecords(q, w="any", highlight=""){
 	const compareMonster = document.getElementById("compareMonster").checked;
 	//get quest info.
 	const qArr = QuestList.find( record => record.id == q)
+
+	if(!qArr){
+		return;
+	}
 	
 	//search
 	let localResults = "";
@@ -302,7 +306,6 @@ function displayRecords(q, w="any", highlight=""){
 		//let searchQuest = QuestList.filter(quest => quest.monsters.toLowerCase().includes(mSearch.toLowerCase()));
 		let searchQuest = QuestList.filter(quest => quest.monsters.toLowerCase() == mSearch.toLowerCase() && quest.rank == qArr.rank);
 		const found = searchQuest ? "found" : "nope";
-
 		//there is a list of quests with this monster. filter localData for records where record.quest is in searchQuest.id
 		let tArr = [];
 		let questString = ""
@@ -314,14 +317,10 @@ function displayRecords(q, w="any", highlight=""){
 			else{
 				findRecord = localData.filter(record => record.quest == q.id && record.weapon == w)
 			}			
-
-			findRecord.forEach( function(record){
-				tArr.push(record)				
-			} )
+			findRecord.forEach( record => tArr.push(record) )
 			//findRecord ? tArr.push(findRecord.pop()) : "";
 			questString += findRecord ? "<h3>" + q.rank.toUpperCase() + q.star + "⭐ " + q.vanity + "</h3>" : "";
 		})
-
 		localResults = tArr;
 		questName.innerHTML = questString;
 		//localResults = localData.filter( record => record.quest == q );
@@ -335,7 +334,10 @@ function displayRecords(q, w="any", highlight=""){
 	}
 
 	//set quest name
-	if(compareMonster){
+	if(!qArr){
+		questName.innerHTML = "No matching quest found";
+	}
+	else if(compareMonster){
 		
 	}
 	else{
@@ -367,6 +369,11 @@ function displayRecords(q, w="any", highlight=""){
 	
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
 
 //expects an array of times/datetime objects
 function displayInTable(tArr, highlight="", weaponList=false){
@@ -382,7 +389,7 @@ function displayInTable(tArr, highlight="", weaponList=false){
 	
 	//there is a better way than innerHTML, but this is so much easier. Ain't it always that way?
 	let weaponHead = weaponList ? "<th></th>" : "";
-	let tableString = '<table id="timeAttack" class="xx" border="1"><tr><th>Rank</th><th>Time</th>' + weaponHead + '<th></th><th>Date</th></tr>'
+	let tableString = '<table border="1"><tr><th></th><th>Time</th>' + weaponHead + '<th></th><th>Date</th></tr>'
 	
 	const parser = new DOMParser();
 	let rank = 1;
@@ -426,9 +433,9 @@ function displayInTable(tArr, highlight="", weaponList=false){
 }
 
 
-function addRecord(method = ""){
-	let inputW = document.querySelector('#inputW').value;
-	let inputQ = document.querySelector('#inputQ').value;
+function addRecord(method = ""){	
+	let inputQ = document.querySelector('#quest').value;
+	let inputW = document.querySelector('#weapon').value;	
 	let inputT = parseInt(document.querySelector('#inputT').value);
 	const datetime = Date.now();
 	if(method == ""){method = "slay"}
@@ -451,16 +458,21 @@ function addRecord(method = ""){
 	displayRecords(inputQ, inputW, datetime);
 	//reset input to empty
 	document.querySelector('#inputT').value = ""
-	//scroll to top
-	window.scrollTo(0, 0);
+	//scroll to top of table
+	document.getElementById("timeAttack").scrollIntoView();
 }
 
 function saveRecords(){
 	localStorage.setItem('mhrRecords', JSON.stringify(localData))	
 }
 
-function sortRecords(){
-	localData.sort((a, b) => a.time-b.time);	
+function sortRecords(arr=""){
+	if(arr){
+		arr.sort((a, b) => a.time-b.time);
+	}
+	else{
+		localData.sort((a, b) => a.time-b.time);
+	}
 }
 
 function clearRecords(){
@@ -544,7 +556,10 @@ function questSearch(targetSelect, search=""){
 	}
 
 	//build the option list
-	qArr.forEach(key => buildString += `<option value="${key.id}">${key.rank.toUpperCase()}${key.star}⭐ ${key.name}</option>`)
+	if(qArr.length){
+		qArr.forEach(key => buildString += `<option value="${key.id}">${key.rank.toUpperCase()}${key.star}⭐ ${key.name}</option>`)
+	}
+	
 	document.getElementById(targetSelect).innerHTML = buildString;
 }
 
@@ -563,10 +578,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	questSearch("quest", questSearchEle.value);
 
 	//add search for add record questlist and init
-	document.getElementById("addRecordSearch").addEventListener("input", function(){questSearch("inputQ", this.value)});
+	/*document.getElementById("addRecordSearch").addEventListener("input", function(){questSearch("inputQ", this.value)});
 	document.getElementById("soloMonster").addEventListener("input", function(){questSearch("inputQ", addRecordSearch.value)});
 	document.getElementById("rankSelect").addEventListener("input", function(){questSearch("inputQ", addRecordSearch.value)});
-	questSearch("inputQ", addRecordSearch.value);
+	questSearch("inputQ", addRecordSearch.value);*/
 
 	
 

@@ -12,6 +12,20 @@ body > section{
 	margin: 50px auto;	
 }
 
+h1,h2,h3{
+	margin: 0 0 20px 0;
+}
+
+section > div{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#questSearch{
+	min-height: 30px;
+	min-width: 300px;
+}
+
 #timeAttack{
 	display: flex;
 	flex-direction: column;
