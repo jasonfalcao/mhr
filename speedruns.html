@@ -21,15 +21,40 @@
 
 	<select id="quest" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)"></select>
 
-	<select id="weapon" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)">
-		<script>
-			WeaponList.forEach(key => document.write('<option value="', key.id, '">', key.vanity, '</option>' ))
-		</script>	
-		<!--<option value="any">all weapons</option>-->
-	</select>
+	<section>
+		<h3>ADD RECORD:</h3>
+		<!--<div><label>Search by Monster Name: <input type="text" id="addRecordSearch" value="" /></label></div>
+		<select id="inputQ">
+
+		</select>
+		<select id="inputW">
+			<script>
+				WeaponList.forEach(key => document.write('<option value="', key.id, '">', key.vanity, '</option>' ))
+			</script>	
+		</select>-->
+		<input id="inputT" type="text" value="" maxlength="6">
+		<select id="weapon" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)">
+			<script>
+				WeaponList.forEach(key => document.write('<option value="', key.id, '">', key.vanity, '</option>' ))
+			</script>
+			<!--<option value="any">all weapons</option>-->
+		</select>
+		<select id="rarity" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)">
+			<option value=""></option>
+			<option value="1">Rarity 1</option>
+			<option value="2">Rarity 2</option>
+			<option value="3">Rarity 3</option>
+			<option value="4">Rarity 4</option>
+			<option value="5">Rarity 5</option>
+			<option value="6">Rarity 6</option>
+			<option value="7">Rarity 7</option>
+		</select>
+		<div id="addButtonDiv"><button id="addButtonSlay" onclick="addRecord()">Slay</button><button id="addButtonCapture" onclick="addRecord('capture')">Capture</button></div>	
+	</section>
 
 	<div><input type="checkbox" id="compareMonster" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)" /> <label for="compareMonster">Display all quests with the same monster combination</label></div>
 	<div><input type="checkbox" id="compareBox" value="any" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)" /> <label for="compareBox">Compare vs all weapons</label></div>
+	<div><input type="checkbox" id="rarityBox" value="rarity" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)" /> <label for="rarityBox">Display weapon rarity</label></div>
 	
 	<div><input type="checkbox" id="soloMonster" /> <label for="soloMonster">Solo Monster</label></div>
 	<div>Rank selection
@@ -43,20 +68,7 @@
 
 </section>
 
-<section>
-	<h3>ADD RECORD:</h3>
-	<!--<div><label>Search by Monster Name: <input type="text" id="addRecordSearch" value="" /></label></div>
-	<select id="inputQ">
 
-	</select>
-	<select id="inputW">
-		<script>
-			WeaponList.forEach(key => document.write('<option value="', key.id, '">', key.vanity, '</option>' ))
-		</script>	
-	</select>-->
-	<input id="inputT" type="text" value="" maxlength="6">
-	<div id="addButtonDiv"><button id="addButtonSlay" onclick="addRecord()">Slay</button><button id="addButtonCapture" onclick="addRecord('capture')">Capture</button></div>
-</section>
 
 
 <section id="timeAttack">

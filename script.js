@@ -247,8 +247,14 @@ new Quest(10736, "The Graceful Apex Rathian", "hr", 8, "apexrathian", "hunting",
 new Quest(10737, "The Harlequin Apex Mizutsune", "hr", 8, "apexmizutsune", "hunting", false),
 new Quest(10748, "Master Utsushi's Challenge Part 1", "hr", 8, "zinogre,almudron", "hunting", false),
 new Quest(10749, "Master Utsushi's Challenge Part 2", "hr", 8, "rajang,gossharag", "hunting", false),
-new Quest(10750, "Master Utsushi's Challenge Part 3", "hr", 8, "nargacuga,magnamalow", "hunting", false)
+new Quest(10750, "Master Utsushi's Challenge Part 3", "hr", 8, "nargacuga,magnamalo", "hunting", false),
 /*** end update 2.0 ***/
+/*** event quests ***/
+new Quest(60101, "Out of Sight, Out of Mind's Eye", "hr", 6, "tetranadon", "hunting", false),
+new Quest(60102, "Beast of the Shadows", "hr", 7, "nargacuga", "hunting", false),
+new Quest(60103, "Haste Makes Waste", "hr", 8, "apexarzuros", "hunting", false),
+new Quest(60002, "Heart of a Warrior", "hr", 3, "gossharag,magnamalo", "arena", false),
+new Quest(70001, "Challenge Quest 01", "lr", 2, "tetranadon", "hunting", false)
 );
 //console.log("QuestList = ")
 //console.log(QuestList)
@@ -286,6 +292,7 @@ function displayRecords(q, w="any", highlight=""){
 	const monsterIcons = document.getElementById("monsterIcons");
 	const compareBox = document.getElementById("compareBox").checked;
 	const compareMonster = document.getElementById("compareMonster").checked;
+	const rarityBox = document.getElementById("rarityBox").checked;
 	//get quest info.
 	const qArr = QuestList.find( record => record.id == q)
 
@@ -361,10 +368,10 @@ function displayRecords(q, w="any", highlight=""){
 		displayInTable(0)
 	}
 	else if(w=="any" || compareBox){
-		displayInTable(localResults, highlight, true);
+		displayInTable(localResults, highlight, true, rarityBox);
 	}
 	else{
-		displayInTable(localResults, highlight);
+		displayInTable(localResults, highlight, false, rarityBox);
 	}
 	
 }
@@ -376,7 +383,7 @@ function sleep(ms) {
 
 
 //expects an array of times/datetime objects
-function displayInTable(tArr, highlight="", weaponList=false){
+function displayInTable(tArr, highlight="", weaponList=false, rarity=false ){
 	let timeTable = document.getElementById("timeTable");
 
 	//empty out the previous table
@@ -388,8 +395,9 @@ function displayInTable(tArr, highlight="", weaponList=false){
 	}
 	
 	//there is a better way than innerHTML, but this is so much easier. Ain't it always that way?
-	let weaponHead = weaponList ? "<th></th>" : "";
-	let tableString = '<table border="1"><tr><th></th><th>Time</th>' + weaponHead + '<th></th><th>Date</th></tr>'
+	const weaponHead = weaponList ? "<th></th>" : "";
+	const rarityHead = rarity ? "<th></th>" : "";
+	let tableString = '<table border="1"><tr><th></th><th>Time</th>' + weaponHead + rarityHead + '<th></th><th>Date</th></tr>'
 	
 	const parser = new DOMParser();
 	let rank = 1;
@@ -413,14 +421,15 @@ function displayInTable(tArr, highlight="", weaponList=false){
 		if(t.datetime == highlight){
 			highlightClass = ' class="highlight" '
 		}
-
-		let weaponImage = weaponList ? '<td' + highlightClass + '>' + '<img style="height:42px;" src="img/weapons/' + t.weapon + '.png" />' + '</td>' : '';
-		let methodString = t.method ? `<img style="height:25px;margin:5px;" src="img/icons/${t.method}.png" />` : `<img style="height:25px;margin:5px;" src="img/icons/slay.png" />`;
+		const weaponImage = weaponList ? '<td' + highlightClass + '>' + '<img style="height:42px;" src="img/weapons/' + t.weapon + '.png" />' + '</td>' : '';
+		const methodString = t.method ? `<img style="height:25px;margin:5px;" src="img/icons/${t.method}.png" />` : `<img style="height:25px;margin:5px;" src="img/icons/slay.png" />`;
+		const rarityString = rarity ? t.weaponRarity ? `<td ${highlightClass}>&nbsp;${t.weaponRarity}&nbsp;</td>` : `<td ${highlightClass}></td>` : '';
 		const newstring = (`
 		<tr>
 			<td ${highlightClass}>${rankDisplay}</td>
 			<td ${highlightClass}>${msToTime(t.time)}</td>
 			${weaponImage}
+			${rarityString}
 			<td ${highlightClass}>${methodString}</td>
 			<td ${highlightClass}>${str}</td>
 		</tr>
@@ -437,6 +446,7 @@ function addRecord(method = ""){
 	let inputQ = document.querySelector('#quest').value;
 	let inputW = document.querySelector('#weapon').value;	
 	let inputT = parseInt(document.querySelector('#inputT').value);
+	let inputR = document.getElementById('rarity').value;
 	const datetime = Date.now();
 	if(method == ""){method = "slay"}
 
@@ -447,7 +457,8 @@ function addRecord(method = ""){
 					quest : inputQ,
 					time : timeToMs(inputT),
 					datetime : datetime,
-					method : method
+					method : method,
+					...inputR && { weaponRarity : inputR }
 				});
 	sortRecords();
 	saveRecords();
@@ -551,8 +562,12 @@ function questSearch(targetSelect, search=""){
 		console.log('condition 5')
 		qArr = QuestList.filter(quest => quest.monsters.toLowerCase().includes(search.toLowerCase()))
 	}
-	else{
+	else if(rank != ""){
 		console.log('condition 6')
+		qArr = QuestList.filter(quest => quest.rank == rank)
+	}
+	else{
+		console.log('condition 7')
 	}
 
 	//build the option list
