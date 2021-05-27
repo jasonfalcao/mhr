@@ -254,7 +254,27 @@ new Quest(60101, "Out of Sight, Out of Mind's Eye", "hr", 6, "tetranadon", "hunt
 new Quest(60102, "Beast of the Shadows", "hr", 7, "nargacuga", "hunting", false),
 new Quest(60103, "Haste Makes Waste", "hr", 8, "apexarzuros", "hunting", false),
 new Quest(60002, "Heart of a Warrior", "hr", 3, "gossharag,magnamalo", "arena", false),
-new Quest(70001, "Challenge Quest 01", "lr", 2, "tetranadon", "hunting", false)
+new Quest(70001, "Challenge Quest 01", "lr", 2, "tetranadon", "hunting", false),
+/*** start update 3.0 ***/
+new Quest(10751, "Master Utsushi's Challenge Part 4", "hr", 8, "tigrex,anjanath", "hunting", false),
+new Quest(10706, "The Allmother", "hr", 8, "ibushi,narwa", "hunting", false),
+new Quest(10707, "The Crimson Glow", "hr", 8, "valstrax", "hunting", false),
+new Quest(10725, "The Evil Star from Beyond (Frost Islands)", "hr", 8, "valstrax", "hunting", false),
+new Quest(10726, "The Evil Star from Beyond (Sandy Plains)", "hr", 8, "valstrax", "hunting", false),
+new Quest(10727, "The Evil Star from Beyond (Flooded Forest)", "hr", 8, "valstrax", "hunting", false),
+new Quest(10728, "The Evil Star from Beyond (Lava Caverns)", "hr", 8, "valstrax", "hunting", false),
+new Quest(10738, "The Fearsome Apex Rathalos", "hr", 8, "apexrathalos", "hunting", false),
+new Quest(10739, "The Devastating Apex Diablos", "hr", 8, "apexdiablos", "hunting", false),
+new Quest(10740, "The Voltaic Apex Zinogre", "hr", 8, "apexzinogre", "hunting", false),
+new Quest(10741, "Advanced: Dual Calamities", "hr", 8, "magnamalo,bazelgeuse", "hunting", false),
+new Quest(10742, "Advanced: Monsters in Ink", "hr", 8, "gossharag,tigrex,mizutsune", "hunting", false),
+new Quest(10743, "Advanced: Of Storm and Fire", "hr", 8, "kushaladaora,teostra", "hunting", false),
+new Quest(10744, "Advanced: Scaredy-Cat", "hr", 8, "chameleos,rajang", "hunting", false),
+new Quest(10745, "Advanced: The Fallen Comet", "hr", 8, "valstrax,raknakadaki", "hunting", false),
+new Quest(10746, "Advanced: Proof of Power", "hr", 8, "rathalos,diablos,magnamalo", "hunting", false),
+new Quest(10747, "Advanced: Those Crowned Apex", "hr", 8, "apexrathalos,apexzinogre,apexmizutsune", "hunting", false)
+
+/*** end update 3.0 ***/
 );
 //console.log("QuestList = ")
 //console.log(QuestList)
