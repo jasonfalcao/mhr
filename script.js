@@ -257,6 +257,7 @@ new Quest(60002, "Heart of a Warrior", "hr", 3, "gossharag,magnamalo", "arena", 
 new Quest(70001, "Challenge Quest 01", "lr", 2, "tetranadon", "hunting", false),
 /*** start update 3.0 ***/
 new Quest(10751, "Master Utsushi's Challenge Part 4", "hr", 8, "tigrex,anjanath", "hunting", false),
+new Quest(10752, "Master Utsushi's Challenge Part 5", "hr", 8, "rathalos,raknakadaki", "hunting", false),
 new Quest(10706, "The Allmother", "hr", 8, "ibushi,narwa", "hunting", false),
 new Quest(10707, "The Crimson Glow", "hr", 8, "valstrax", "hunting", false),
 new Quest(10725, "The Evil Star from Beyond (Frost Islands)", "hr", 8, "valstrax", "hunting", false),
@@ -418,8 +419,10 @@ function displayInTable(tArr, highlight="", weaponList=false, rarity=false ){
 	const weaponHead = weaponList ? "<th></th>" : "";
 	const rarityHead = rarity ? "<th></th>" : "";
 	let tableString = '<table border="1"><tr><th></th><th>Time</th>' + weaponHead + rarityHead + '<th></th><th>Date</th></tr>'
+
+	//sort the passed array
+	sortRecords(tArr);
 	
-	const parser = new DOMParser();
 	let rank = 1;
 	let rankDisplay = "";
 	tArr.forEach(t => {
