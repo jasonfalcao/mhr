@@ -418,7 +418,7 @@ function displayInTable(tArr, highlight="", weaponList=false, rarity=false ){
 	//there is a better way than innerHTML, but this is so much easier. Ain't it always that way?
 	const weaponHead = weaponList ? "<th></th>" : "";
 	const rarityHead = rarity ? "<th></th>" : "";
-	let tableString = '<table border="1"><tr><th></th><th>Time</th>' + weaponHead + rarityHead + '<th></th><th>Date</th></tr>'
+	let tableString = '<table border="1"><tr><th></th><th>Time</th>' + weaponHead + rarityHead + '<th></th><th>Date</th><th></th></tr>'
 
 	//sort the passed array
 	sortRecords(tArr);
@@ -455,6 +455,7 @@ function displayInTable(tArr, highlight="", weaponList=false, rarity=false ){
 			${rarityString}
 			<td ${highlightClass}>${methodString}</td>
 			<td ${highlightClass}>${str}</td>
+			<td> <span onclick="editRecord(${t.datetime})">edit</span> <span onclick="deleteRecord(${t.datetime})">delete</span></td>
 		</tr>
 		`)
 		tableString += newstring;
@@ -497,7 +498,7 @@ function addRecord(method = ""){
 }
 
 function saveRecords(){
-	localStorage.setItem('mhrRecords', JSON.stringify(localData))	
+	localStorage.setItem('mhrRecords', JSON.stringify(localData))
 }
 
 function sortRecords(arr=""){
@@ -507,6 +508,38 @@ function sortRecords(arr=""){
 	else{
 		localData.sort((a, b) => a.time-b.time);
 	}
+}
+
+function editRecord(id){
+	const record = localData.find(record => record.datetime == id)
+	record.weapon = window.prompt('Weapon Code', record.weapon)
+	record.weaponRarity = window.prompt('Weapon Rarity', record.weaponRarity)
+	
+	//record.weaponRarity = 12
+	saveRecords()
+	sortRecords()
+	displayRecords(record.quest, weaponCompareValue() ? 'any' : record.weapon)
+}
+
+function deleteRecord(id){
+	//find matching record
+	const record = localData.find(record => record.datetime == id) //find objects that do not match the searched element
+	const newArr = localData.filter(record => record.datetime != id) //find objects that do not match the searched element
+	localData = newArr //overwrite the existing local data with the new list
+
+	sortRecords();
+	saveRecords();
+	displayRecords(record.quest, weaponCompareValue() ? 'any' : record.weapon)
+}
+
+
+function weaponCompareValue(){
+	return document.getElementById("compareBox").checked
+}
+
+
+function exportRecords(){
+	alert(JSON.stringify(localData))
 }
 
 function clearRecords(){

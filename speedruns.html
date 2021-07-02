@@ -22,7 +22,7 @@
 	<select id="quest" onchange="displayRecords(document.querySelector('#quest').value, document.querySelector('#weapon').value)"></select>
 
 	<section>
-		<div>ADD RECORD:</div>
+		<h3>ADD RECORD:</h3>
 		<!--<div><label>Search by Monster Name: <input type="text" id="addRecordSearch" value="" /></label></div>
 		<select id="inputQ">
 
@@ -85,6 +85,9 @@
 
 
 <section>
+	<h1>Export Records</h1>
+	<button onclick="exportRecords()">EXPORT RECORDS</button>
+
 	<h1>Reset your data</h1>
 	<button onclick="clearRecords()">RESET</button>
 </section>
