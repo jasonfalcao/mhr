@@ -438,7 +438,7 @@ function displayInTable(tArr, highlight="", weaponList=false, rarity=false ){
 		const datetime = new Date(t.datetime);
 		const offsetMs = datetime.getTimezoneOffset() * 60 * 1000;
 		const dateLocal = new Date(datetime.getTime() - offsetMs);
-		const str = dateLocal.toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
+		const str = dateLocal.toISOString().slice(0, 10).replace(/-/g, "/").replace("T", " ");
 		let highlightClass = "";
 
 		if(t.datetime == highlight){
@@ -455,7 +455,7 @@ function displayInTable(tArr, highlight="", weaponList=false, rarity=false ){
 			${rarityString}
 			<td ${highlightClass}>${methodString}</td>
 			<td ${highlightClass}>${str}</td>
-			<td> <span onclick="editRecord(${t.datetime})">edit</span> <span onclick="deleteRecord(${t.datetime})">delete</span></td>
+			<td ${highlightClass}><div onclick="editRecord(${t.datetime})">edit</div> <div onclick="deleteRecord(${t.datetime})">delete</div></td>
 		</tr>
 		`)
 		tableString += newstring;
@@ -514,22 +514,29 @@ function editRecord(id){
 	const record = localData.find(record => record.datetime == id)
 	record.weapon = window.prompt('Weapon Code', record.weapon)
 	record.weaponRarity = window.prompt('Weapon Rarity', record.weaponRarity)
-	
-	//record.weaponRarity = 12
 	saveRecords()
 	sortRecords()
 	displayRecords(record.quest, weaponCompareValue() ? 'any' : record.weapon)
 }
 
 function deleteRecord(id){
-	//find matching record
-	const record = localData.find(record => record.datetime == id) //find objects that do not match the searched element
-	const newArr = localData.filter(record => record.datetime != id) //find objects that do not match the searched element
-	localData = newArr //overwrite the existing local data with the new list
+	console.log("deleting record...waiting for confirm")
+	let confirm = window.confirm("Are you sure you want to delete this record? This cannot be undone!")
+	if(confirm === true){
+		console.log("Goodbye record...")
+		//find matching record
+		const record = localData.find(record => record.datetime == id) //find objects that do not match the searched element
+		const newArr = localData.filter(record => record.datetime != id) //find objects that do not match the searched element
+		localData = newArr //overwrite the existing local data with the new list
 
-	sortRecords();
-	saveRecords();
-	displayRecords(record.quest, weaponCompareValue() ? 'any' : record.weapon)
+		sortRecords();
+		saveRecords();
+		displayRecords(record.quest, weaponCompareValue() ? 'any' : record.weapon)
+	}
+	else{
+		console.log("Nevermind then!")
+	}
+
 }
 
 
@@ -539,7 +546,8 @@ function weaponCompareValue(){
 
 
 function exportRecords(){
-	alert(JSON.stringify(localData))
+	document.getElementById('exportedRecordData').innerHTML = JSON.stringify(localData)
+	document.getElementById('exportedRecordData').style.display = 'block'
 }
 
 function clearRecords(){
@@ -635,12 +643,63 @@ function questSearch(targetSelect, search=""){
 }
 
 
+function getRarityValue(){
+	return document.getElementById('rarity').value;
+}
+function saveSelectedRarity(){
+	console.log('saveSelectedRarity')
+	localStorage.setItem('selectedRarity', getRarityValue() )
+}
+function getSelectedRarity(){
+	return localStorage.getItem('selectedRarity')
+}
+function setSelectedRarity(){
+	document.getElementById('rarity').value = getSelectedRarity()
+}
+
+function getWeaponValue(){
+	return document.getElementById('weapon').value;
+}
+function saveSelectedWeapon(){
+	console.log('saveSelectedWeapon')
+	localStorage.setItem('selectedWeapon', getWeaponValue() )
+}
+function getSelectedWeapon(){
+	return localStorage.getItem('selectedWeapon')
+}
+function setSelectedWeapon(){
+	document.getElementById('weapon').value = getSelectedWeapon()
+}
+
+
+function getQuestValue(){
+	console.log(document.querySelector('#quest').value)
+	return document.getElementById('quest').value
+}
+function saveSelectedQuest(){
+	console.log('saveSelectedQuest')
+	localStorage.setItem('selectedQuest', getQuestValue() )
+}
+function getSelectedQuest(){
+	return localStorage.getItem('selectedQuest')
+}
+function setSelectedQuest(){
+	document.getElementById('quest').value = getSelectedQuest()
+}
+
+
 
 /***** page load, add event listeners *****/
 document.addEventListener("DOMContentLoaded", function() {
 
 	const questSearchEle = document.getElementById("questSearch")
 	const addRecordSearch = document.getElementById("addRecordSearch")
+
+	//test
+	/*document.getElementById('quest').addEventListener('input', function(){
+		console.log(document.getElementById('quest').value)
+	})*/
+
 
 	//add search for display time questlist and initialize
 	document.getElementById("questSearch").addEventListener("input", function(){questSearch("quest", this.value)});
@@ -655,5 +714,16 @@ document.addEventListener("DOMContentLoaded", function() {
 	questSearch("inputQ", addRecordSearch.value);*/
 
 	
+	//set last selected options as default
+	setSelectedWeapon()
+	setSelectedRarity()
+	setSelectedQuest()
+	displayRecords(getQuestValue(), weaponCompareValue() ? 'any' : getWeaponValue())
+
+	//add listeners to save changes
+	document.getElementById("quest").addEventListener("input", saveSelectedQuest );
+	document.getElementById("weapon").addEventListener("input", saveSelectedWeapon );
+	document.getElementById("rarity").addEventListener("input", saveSelectedRarity );
+
 
 });
