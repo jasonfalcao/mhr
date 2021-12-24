@@ -273,9 +273,55 @@ new Quest(10743, "Advanced: Of Storm and Fire", "hr", 8, "kushaladaora,teostra",
 new Quest(10744, "Advanced: Scaredy-Cat", "hr", 8, "chameleos,rajang", "hunting", false),
 new Quest(10745, "Advanced: The Fallen Comet", "hr", 8, "valstrax,raknakadaki", "hunting", false),
 new Quest(10746, "Advanced: Proof of Power", "hr", 8, "rathalos,diablos,magnamalo", "hunting", false),
-new Quest(10747, "Advanced: Those Crowned Apex", "hr", 8, "apexrathalos,apexzinogre,apexmizutsune", "hunting", false)
-
+new Quest(10747, "Advanced: Those Crowned Apex", "hr", 8, "apexrathalos,apexzinogre,apexmizutsune", "hunting", false),
 /*** end update 3.0 ***/
+/*** start post 3.0 event quests */
+new Quest(60003, "Bird Wyverns of Ruin? ", "lr", 1, "kuluyaku,greatizuchi,greatbaggi", "arena", false),
+new Quest(60004, "Rising Sun!?", "lr", 2, "", "hunting", false),
+new Quest(60104, "I Can't Do What Somnacan", "hr", 7, "somnacanth", "hunting", false),
+new Quest(60105, "Dancing Parasol, Snowy Breeze", "hr", 4, "Aknosom", "hunting", false),
+new Quest(60106, "Heart of a Ninja", "hr", 7, "nargacuga,barioth,tobikadachi", "arena", false),
+new Quest(60107, "Almudron: Fashion Victim", "hr", 8, "almudron", "hunting", false),
+new Quest(60108, "Fooled in the Flooded Forest", "hr", 8, "chameleos", "hunting", false),
+new Quest(60109, "Rampage: Muddi Gras", "hr", 7, "", "rampage", false),
+new Quest(60110, "Heart of a Hero", "hr", 8, "tigrex,diablos", "hunting", false),
+new Quest(60111, "An Icy Blade So Bright", "hr", 8, "gossharag", "hunting", false),
+new Quest(60112, "Tempest in the Desert", "hr", 8, "kushaladaora", "hunting", false),
+new Quest(60113, "Rampage: Enchanting Parade", "hr", 8, "", "rampage", false),
+new Quest(60114, "Boomy Dango", "hr", 8, "bazelgeuse", "hunting", false),
+new Quest(60115, "Heart of Rivalry", "hr", 8, "apexmizutsune,apexzinogre", "hunting", false),
+new Quest(60116, "Rampage: Kamura Night Hunt", "hr", 8, "ibushi", "hunting", false),
+new Quest(60117, "SF: Ultimate Promotion Exam", "hr", 8, "rajang", "hunting", false),
+new Quest(60118, "Scorching Showdown", "hr", 8, "teostra", "hunting", false),
+new Quest(60119, "White Desert Blossom", "hr", 8, "raknakadaki", "hunting", false),
+new Quest(60121, "Gales of Ibushi Blow Again ", "hr", 8, "ibushi", "hunting", false),
+new Quest(60122, "Clouds of Narwa Rumble Again", "hr", 8, "narwa", "hunting", false),
+new Quest(60123, "Trouble in Paradise", "hr", 8, "apexrathian,apexrathalos", "hunting", false),
+new Quest(60124, "Diablos Deception", "hr", 8, "apexdiablos,apexdiablos", "hunting", false),
+new Quest(60125, "Blazin' Soul of a Warrior", "hr", 8, "magnamalo", "hunting", false),
+new Quest(60126, "Advanced: Born of Paradise", "hr", 8, "ibushi,narwa", "hunting", false),
+new Quest(60128, "The Blue Bomber's Best Bud", "hr", 6, "zinogre", "arena", false),
+new Quest(60129, "Knights in Shattered Armor", "hr", 6, "rathalos,basarios,volvidon", "hunting", false),
+new Quest(60130, "Soaring Desire", "hr", 5, "royalludroth,pukeipukei,bishaten", "hunting", false),
+new Quest(60131, "Kunai Ask You a Favor?", "hr", 7, "barroth,rathian,diablos", "hunting", false),
+new Quest(60132, "Troubled Waters", "hr", 6, "mizutsune,somnacanth,jyuratodus", "hunting", false),
+new Quest(60133, "Rajang's Holiday Special", "hr", 8, "greatwroggi,greatwroggi,rajang", "arena", false),
+new Quest(60134, "Heart of an Apex", "hr", 8, "apexarzuros,apexrathian,apexdiablos", "hunting", false),
+new Quest(60135, "Nothing to Sneeze At!", "hr", 6, "bishaten,bishaten", "arena", false),
+new Quest(60136, "Frost Bites", "hr", 8, "lagombi,barioth,gossharag", "hunting", false),
+new Quest(60137, "Dastardly Vile Aknosom Trio", "hr", 5, "aknosom,aknosom,aknosom", "hunting", false),
+new Quest(60138, "Wrestling with Pain", "hr", 5, "arzuros,tetranadon", "hunting", false),
+new Quest(60146, "Apex Arzuros Emergency", "hr", 8, "apexarzuros", "hunting", false),
+new Quest(60147, "Apex Rathian Emergency", "hr", 8, "apexrathain", "hunting", false),
+new Quest(60148, "Apex Mizutsune Emergency", "hr", 8, "apexmizutsune", "hunting", false),
+new Quest(60149, "Apex Rathalos Emergency", "hr", 8, "apexrathalos", "hunting", false),
+new Quest(60150, "Apex Diablos Emergency", "hr", 8, "apexdiablos", "hunting", false),
+new Quest(60005, "Gotta Hoard Fast!", "hr", 2, "", "hunting", false),
+new Quest(60152, "Super Shady Look-alike", "hr", 8, "nargacuga", "hunting", false),
+new Quest(60153, "USJ - Arzuros Onslaught!", "hr", 8, "", "rampage", false),
+new Quest(60154, "USJ - Shrine Showdown!", "hr", 8, "tetranadon,almudron,magnamalo", "hunting", false)
+//new Quest(key, "questName", "hr", 8, "monsters", "hunting", false),
+/*** end post 3.0 event quests */
 );
 //console.log("QuestList = ")
 //console.log(QuestList)
@@ -550,6 +596,13 @@ function exportRecords(){
 	document.getElementById('exportedRecordData').style.display = 'block'
 }
 
+function copyRecords(){
+	document.getElementById('exportedRecordData').select();
+	document.getElementById('exportedRecordData').setSelectionRange(0, 99999);
+	navigator.clipboard.writeText(document.getElementById('exportedRecordData').value);
+}
+
+
 function clearRecords(){
 	console.log("clearing...waiting for confirm")
 	let confirm = window.confirm("Are you sure you want to reset? This cannot be undone!")
@@ -724,6 +777,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("quest").addEventListener("input", saveSelectedQuest );
 	document.getElementById("weapon").addEventListener("input", saveSelectedWeapon );
 	document.getElementById("rarity").addEventListener("input", saveSelectedRarity );
+
+	document.getElementById("exportRecordsButton").addEventListener("click", exportRecords );
+	document.getElementById("exportRecordsCopy").addEventListener("click", copyRecords );
 
 
 });
